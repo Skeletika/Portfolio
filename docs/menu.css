@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "kade", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+#header-container {
+    width: 100%;
+}
+
+header{
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    height: 40px;
+    transition: all 1.5s ease;
+}
+
+header:hover{
+    height: 100px;
+}
+
+nav {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end; /* Aligne le contenu à droite */
+}
+
+nav ul{
+    width: 70%;
+    display: flex;
+    position: relative;
+}
+
+#logo {
+    margin : 0px; 
+    margin-left: 120px;
+    transition: 0.8s ease ;
+    transform-origin: center ;
+}
+
+#logo:hover {
+    transform: scale(1, 0.7);
+}
+
+nav ul li {
+    position: relative;
+    list-style-type: none;
+    width: 33%;
+    padding: 10px;
+    display: flex;
+    justify-content: center; /* Centre horizontalement */
+    align-items: center;     /* Centre verticalement */ 
+}
+
+nav ul li:hover{
+    background-color: rgb(209, 209, 209);
+}
+
+nav ul li::after {
+    content: ""; /* Obligatoire pour que l'élément soit généré */
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    background: #ff5733;
+    transform: scaleX(0); /* Cache la bordure */
+    transform-origin: left; /* Anime depuis la gauche */
+    transition: transform 0.3s ease-in-out;
+}
+
+nav ul li a {
+    color: black;
+    text-decoration: none;
+    font-size: 1.2vw;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: font-size 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+nav ul li:hover::after {
+    transform: scaleX(1); /* Affiche le sous-menu */
+}
+nav ul li:hover .princip {
+    font-size: 1.4vw;
+}
+
+.sous-menu {
+    position: absolute;
+    top: 100%;
+    display: none; /* Caché par défaut */
+    width: 100%;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+.sous-menu li {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: #f0f0f0; 
+}
+
+.sous-menu li a {
+    padding : 15px;
+    font-size: 1.2vw;
+}
+
+
+nav ul li:hover .sous-menu {
+    display: block;
+}
+
+.sous-menu li:hover {
+background-color: rgb(209, 209, 209);
+}
+
+.sous-menu li:hover a{
+    font-size: 1.3vw;
+    font-weight: bold;
+}

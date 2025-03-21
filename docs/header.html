@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Site</title>
+    <link rel="stylesheet" href="menu.css"> <!-- Ajoute tes styles ici -->
+</head>
+
+<header>
+    <a id="logo" href="portfolio.html" onclick="redirectToPage(event,'/portfolio.html','presentation')"><img src="logo/logo-site-bs-petit.png" height="100%" alt="Logo SITE"></a>
+    <nav>
+        <ul class="menu">
+            <li><a class="princip" href="portfolio.html#presentation" onclick="redirectToPage(event,'/portfolio.html', 'presentation')">Présentation</a>
+                <ul class="sous-menu">
+                    <li><a href="portfolio.html#competence" onclick="redirectToPage(event,'/portfolio.html','competence')">Compétences</a></li>
+                    <li><a href="portfolio.html#parcours" onclick="redirectToPage(event,'/portfolio.html', 'parcours')">Parcours</a></li>
+                    
+                </ul>
+            </li>
+            <li><a class="princip" href="projets.html" onclick="redirectToPage(event,'/projets.html')" >Projets</a>
+            </li>
+            <li><a class="princip" href="about.html" onclick="redirectToPage(event,'projets.html')">À propos</a>
+                <ul class="sous-menu">
+                    <li><a href="about.html#quisuisje" onclick="redirectToPage(event,'projets.html')">Qui suis-je ?</a></li>
+                    <li><a href="about.html#passion" onclick="redirectToPage(event,'projets.html')">Passions</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+</html>

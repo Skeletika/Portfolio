@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Projets</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="animation.css">
+        <link rel="stylesheet" href="ancre.css">
+        <link rel="stylesheet" href="projets.css">
+    </head>
+    <body>
+        <div id="header-container"></div> <div id="body"></div>
+    <div class="doc">
+        <div class="section-design design1">
+                <h1 id="projets" class="fh-enter-anim">Mes réalisation</h1>
+            </div>
+        </div>
+        
+        <div class="container-white">
+
+            <div id="info-projet">
+                <a id="closeProjet" onclick="closeProjet()"><img src="icons/fermer-la-croix.png" alt="fermer"></a>
+
+                <div class="content">
+                    <div class="left"> <!-- insersetion de l'image --></div>
+                    <div class="right"><!-- insertion de la description --></div>
+                </div>
+            </div>
+
+            <div class="list-projets">
+                <div class="item-projets" id="infographie" onclick="showProjet('infographie')">
+                    <img 
+                    src="contenu/Projets/redim/infographie-tiktok.png" alt="image inforgraphie tiktok">
+                    <div class="description">
+                        <h4>Infographie TikTok</h4>
+                        <p>Infographie sur TikTok réalisée en cours de communication digital.</p>
+                        <p>Réalisé sur Figma</p>
+                    </div>
+
+                    <div class="info">
+                        <p class="info-title">Infographie TikTok</p>
+                        <p class="info-content">Infographie sur TikTok réalisée en cours de communication digital.
+                            Utilsation de la charte graphique tiktok et de son logo.
+                            Informations à but de l'utilisation de la plateforme pour un meilleur
+                            contrôle sur le calendrier éditorial de publication d'une marque ainsi que sa cible.
+                        </p>
+                        <p class="info-software">Réalisé sur Figma</p>
+                        <img class="img-projet" src="contenu/Projets/infographie-tiktok.png" alt="image inforgraphie tiktok">
+                    </div>
+
+                </div>
+                <div class="item-projets" id="ochome" onclick="showProjet('ochome')">
+                    <img 
+                    src="contenu/Projets/redim/logo-OCHome.png" alt="image logo OCHome">
+                    <div class="description">
+                        <h4>Logo OCHome</h4>
+                        <p>Logo d'une entreprise fictive de personnalisation de porte d'entrée.</p>
+                        <p>Réalisé sur Adobe Illustrator</p>
+                    </div>
+                    <div class="info">
+                        <p class="info-title">Logo OCHome</p>
+                        <p class="info-content">Logo d'une entreprise fictive de personnalisation de porte d'entrée.
+                            Utilisation de la couleur orange pour la chaleur et le dynamisme, le gris pour la neutralité et la sobriété.
+                            La porte d'entrée est un élément important pour une maison, elle est le premier élément visible.
+                            Le logo doit donc être simple, lisible et représentatif de l'activité de l'entreprise.
+                        </p>
+                        <p class="info-software">Réalisé sur Adobe Illustrator</p>
+                        <img class="img-projet" src="contenu/Projets/logo-OCHome.png" alt="image logo entreprise fictive OCHome">
+                    </div>
+                </div>
+
+                <div class="item-projets" id="kunel-gaur" onclick="showProjet('kunel-gaur')">
+                    <img 
+                    src="contenu/Projets/redim/flageolet-kunel-gaur.png" alt="image kunel gaur flageolet">
+                    <div class="description">
+                        <h4>Réalisation Kunel Gaur</h4>
+                        <p>Réalisation inspirée de Kunel Gaur, une boite de flageolets.</p>
+                        <p>Réalisé sur Adobe Illustrator et Photoshop</p>
+                    </div>
+                    <div class="info">
+                        <p class="info-title">Réalisation Kunel Gaur</p>
+                        <p class="info-content">Réalisation inspirée de Kunel Gaur, une boite de flageolets.
+                            Utilisation de la couleur verte pour le flageolet, le marron pour le bois et le blanc pour la propreté.
+                            La boite est un élément important pour la conservation des aliments, elle doit donc être hermétique et pratique.
+                            Le design doit donc être simple, lisible et représentatif du produit.
+                        </p>
+                        <p class="info-software">Réalisé sur Adobe Illustrator et Photoshop</p>
+                        <img class="img-projet" src="contenu/Projets/flageolet-kunel-gaur.png" alt="image flageolet kunel gaur">
+                        <img class="img-projet" src="contenu/Projets/pattes-kunel-gaur.png" alt="image pattes kunel gaur">
+                        <img class="img-projet" src="contenu/Projets/chips-kunel-gaur.png" alt="image chips kunel gaur">
+                        <img class="img-projet" src="contenu/Projets/gateaux-kunel-gaur.png" alt="image gateaux kunel gaur">
+                    </div>
+                </div>
+                
+                <div class="item-projets" id="cuisine" onclick="showProjet('cuisine')">
+                    <img 
+                    src="contenu/Projets/redim/page-chef-cuisine-indesign.png" alt="image page indesign chef cuisine">
+                    <div class="description">
+                        <h4>Page Chef Cuisine</h4>
+                        <p>Mise en place d'élément sur Indesign, création de double page de présentation de chef de cuisine et recette attribuée.</p>
+                        <p>Réalisé sur Indesign</p>
+                    </div>
+                    <div class="info">
+                        <p class="info-title">Réalisation Indesign présentation gastronomique</p>
+                        <p class="info-content">Mise en place d'élément sur Indesign, création de double page de présentation de chef de cuisine et recette attribuée.
+                            
+                        </p>
+                        <p class="info-software">Réalisé sur Adobe Indesign</p>
+                        <img class="img-projet" src="contenu/Projets/page-chef-cuisine-indesign.png" alt="image production Indesign chef cuisine">
+                        <img class="img-projet" src="contenu/Projets/page-chef-cuisine-indesign2.png" alt="image production Indesign chef cuisine">
+                    </div>
+                </div>
+
+
+                <div class="item-projets" id="mcreator" onclick="showProjet('mcreator')">
+                    <img 
+                    src="contenu/Projets/redim/logo-Mcreator.png" alt="image logo MCreator">
+                    <div class="description">
+                        <h4>Mod Minecraft personnalisé</h4>
+                        <p>Projet de mod Minecraft personnel, création de texture, model 3D, procédures(fonctions), paramétrage, interface visuelle</p>
+                        <p>Réalisé sur MCreator et Blockbench 3D</p>
+                    </div>
+                </div>
+
+
+                <div class="item-projets" id="sikalobi" onclick="showProjet('sikalobi')">
+                    <img 
+                    src="contenu/Projets/redim/screen-sikalobi-site.png" alt="image site sikalobi association">
+                    <div class="description">
+                        <h4>Site Sikalobi</h4>
+                        <p>Création, configuration entière d'un site internet appelé SIKALOBI, une association au service de Kinshasa et basée à Nancy.</p>
+                        <p>Réalisé sur Wordpress, Elementor Pro</p>
+                    </div>
+                    <div class="info">
+                        <p class="info-title">Réalisation d'un site internet complet</p>
+                        <p class="info-content">
+                            Dans le cadre d’un projet de groupe, nous avons conçu le site web d’une association sous WordPress avec 
+                            Elementor et refondu son identité visuelle. 
+                            En contact direct avec l’association, nous avons créé un design moderne et intuitif, défini une nouvelle charte graphique 
+                            (logo, couleurs, typographies) et intégré des fonctionnalités clés (actualités, événements, formulaire de contact). 
+                            Ce projet nous a permis de travailler sur l’expérience utilisateur, la cohérence visuelle et la gestion de projet en collaboration avec 
+                            un client réel.
+                        </p>
+                        <p class="info-software">Réalisé sur Wordpress, Elementor Pro</p>
+                        <img class="img-projet" src="contenu/Projets/screen-sikalobi-site.png" alt="image site sikalobi association">
+                        <img class="img-projet" src="contenu/Projets/sikalobi1.png" alt="image site sikalobi association">
+                        <img class="img-projet" src="contenu/Projets/sikalobi2.png" alt="image site sikalobi association">
+                        <img class="img-projet" src="contenu/Projets/sikalobi3.png" alt="image site sikalobi association">
+                        <img class="img-projet" src="contenu/Projets/sikalobi4.png" alt="image site sikalobi association">
+                        <img class="img-projet" src="contenu/Projets/sikalobi5.png" alt="image site sikalobi association">
+                        <img class="img-projet" src="contenu/Projets/sikalobi6.png" alt="image site sikalobi association">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-design design2"></div>
+    </div>
+        <div id="footer-container"></div>
+        <script src="script.js"></script>
+    </body>
+</html>

@@ -1,0 +1,451 @@
+*{
+    font-family: "kade", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.doc {
+    padding-top : 40px;
+    scroll-snap-type: y mandatory;
+}
+.section{
+    background-color: #ffffff;
+    height: auto;
+    margin : 70px 150px;
+}
+.section-design{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.design1{
+        background: 
+            url('Graphic_elements/fond-graphique-p1.png') no-repeat center bottom, /* Image décorative */
+            #0BB7BD;  /* Couleur de fond */
+        background-size: 
+            100% 250px,  /* L'image prend toute la largeur, hauteur fixe */
+            cover;       /* La couleur couvre le reste */
+        /* Hauteur totale de la section */
+        padding : 20px 0 160px 0;
+}
+
+.design2{
+    background: 
+    url('Graphic_elements/fond-graphique-p2.png') no-repeat center top, /* Image décorative */
+    #0BB7BD;  /* Couleur de fond */
+    background-size: 
+     100% 250px,  /* L'image prend toute la largeur, hauteur fixe */
+        cover; 
+    padding : 160px 0 20px 0;
+}
+
+.container-blue {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin : 0px 80px;
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+
+h1{
+    font-size: 70px;
+    margin: 40px 0;
+    text-align: left;
+    border-radius: 60px;
+    background-color: white;
+    box-shadow: -11px 11px 2px #B8EAEC;
+    padding: 0 5%;
+}
+.container-blue p {
+    font-size: 25px ;
+    width: 40%;
+}
+
+.container-white{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin : 60px 80px;
+    height: auto;
+}
+.container-white h2{
+    font-size : 67px; 
+    margin : auto 25px; 
+}
+
+.presentation{
+    margin: 40px 0;
+    padding: 15px 0 120px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap : 30px ;
+    border-radius: 100px;
+}
+
+.presentation-info{
+    display: flex;
+    flex-direction: row;
+    gap: 5%;
+    justify-content: center;
+}
+
+#img-presentation{
+    max-width: 30%;
+    width: auto;
+    height: auto;
+    border-radius: 35% 30px  ;
+    box-shadow: -15px 10px  2px #B8EAEC;
+}
+
+.presentation-content{
+    margin: 65px 0 0 ;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+.presentation-content .h1{
+    font-size: 70px;
+    margin : 10px 0;
+    text-align: left;
+    border-radius: 60px;
+    background-color: white;
+    box-shadow: -11px 11px 2px #B8EAEC;
+    padding: 0 5%;
+}
+.presentation-content h2 {
+    font-size: 60px;
+    border-radius: 60px;
+    box-shadow: -11px 11px 2px #B8EAEC;
+    background-color: white;
+}
+
+.presentation-content h3{
+    font-size: 45px;
+    border-radius: 60px;
+    text-align: right;
+    box-shadow: -11px 11px 2px #B8EAEC;
+    background-color: white;
+    padding: 0 5%;
+}
+
+#logo-mds{
+    width: 25%;
+    align-self: flex-start;
+}
+
+.competence-legend{
+    width: 60%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    font-size: 18px;
+    margin: 50px auto 30px;
+    background-color: #B8EAEC;
+    border-radius: 40px;
+    padding: 10px 3px;
+}
+
+.competence{
+    margin: 40px 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+}
+
+.competence-box{
+    width: 20%;
+    height: 100%;
+    background-color: #0BB7BD;
+    border-radius: 40px;
+    padding : 0px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.competence-box h4{
+    font-family: "kade", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+
+    width: 90%;
+    min-height: 150px;
+    padding: 0 10px;
+    font-size: 1.8vw;
+    margin: 20px 0;
+    text-align: center;
+    align-content: center;
+
+
+    border-top-left-radius:40px ;
+    border-top-right-radius:40px ;
+}
+
+.competence-list{
+    margin: 0;
+    width: 100%;
+
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-items:center ;
+    gap: 20px;
+    padding-bottom: 30px;
+}
+
+.competence-list li{
+    background-color: #b8eaec;
+    border-radius: 40px;
+    font-size: 1.5vw;
+    text-align: center;
+    width: 90%;
+    transition: text-indent 1.3s ease;
+    text-indent: 0;
+    padding: 10% 0%;
+    position: relative;
+}
+
+.competence-list li:hover{
+    background-color: rgb(95, 176, 187);
+    text-indent: -40%;
+    border: 1px solid white;
+    box-shadow: 0px 0px 15px white;
+    padding: calc(10% - 1px) 0;
+}
+
+.competence-list li p {
+    opacity: 0;
+    width: 100%;
+    padding: 11% 0;
+    top : 0 ;
+    text-align: center;
+    position: absolute;
+    transition: text-indent 1.3s ease;
+    text-indent: 5%;
+}
+.competence-list li:hover p {
+    animation: fondu 1.3s both;
+    text-indent: 60%;
+}
+
+@keyframes fondu{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+.parcours{
+    margin: 70px 13% 200px;
+    width: 100%;
+}
+.parcours-titre{
+    align-self: center;
+    font-size: 70px;
+    margin-bottom: 20px;
+}
+.parcours-schema{
+    position: relative;
+    width: 100%;
+    height: 316px;
+    margin: 300px 0 200px;
+    /* background-image: url(Graphic_elements/fond-parcours-graphique-dates.png);
+    background-repeat: no-repeat;
+    background-size: contain; */
+}
+.fond-parcours{
+    height: auto;
+    width: 100%;
+    display: block;
+    z-index: 10;
+}
+
+.parcours-cards::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top : 0;
+    left: 0;
+    z-index: 0;
+}
+
+.parcours-cards{
+    width: 100%;
+    height : 100%;
+    position: relative;
+}
+
+.card{
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+    border-radius: 25px;
+    height: 70%;
+    width: 14%;
+    padding: 20px 20px 30px;
+    box-shadow: 12px 12px 2px #B8EAEC;
+    transition-duration: 1s;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -ms-border-radius: 25px;
+    -o-border-radius: 25px;
+
+    z-index: 20;
+}
+
+.card-front, .card-back{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    z-index: 10;
+}
+
+.card-front{
+    display: flex;
+}
+
+.card:hover{
+    transform: translate(12px ,12px);
+    box-shadow: none;
+}
+
+.card:hover .card-front{
+    visibility: hidden;
+    display: none;
+}
+.card:hover .card-back{
+    animation: card-transition 2s ease;
+    display: flex ;
+}
+
+.card-back{
+    display: none;
+    transition-duration: 1s;
+}
+
+@keyframes card-transition  {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+.card img{
+    height: auto;
+    width: 70%;
+}
+
+.card p{
+    width: 90%;
+    font-size: clamp(1rem, 2vw, 2.5rem);
+    text-align: center;
+}
+.card-back p{
+    width: 100%;
+    font-size: clamp(1rem, 1.2vw, 2.5rem);
+    text-align: center;
+}
+.pos2 .card-back p{
+    width: 100%;
+    font-size: clamp(1rem, 1vw, 2.5rem);
+    text-align: center;
+}
+
+.pos1{
+    bottom : 90%;
+    left: 8%;
+}
+
+.pos2{
+    top: 70%;
+    left : 36%;
+}
+
+.pos3{
+    bottom: 80%;
+    right: 22%;
+}
+
+.long{
+    height: 100vh;
+    width: 100%;
+}
+
+.page-transition{
+    background-color: #237c80;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    animation: enterPage 0.5s ease-in forwards;
+    transform: translate(100%, 0);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes enterPage {
+    0%{
+        transform: translate(100%, 0);
+    }
+    100%{
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes enterPageCloud {
+    0%{
+        opacity: 0;
+        transform: translate(120%, 0);
+    }
+    30%{
+        transform: translate(100%, 0);
+        opacity: 1;
+    }
+    90%{
+        transform: translate(0%, 0);
+    }
+    100%{
+        transform: translate(3%, 0);
+    }
+}
+
+.nuage{
+    width: 100%;
+    height: 100px;
+    animation: enterPageCloud 1.4s ease-in-out;
+    transform: translate(120%, 0);
+    position: absolute;
+    z-index: 100;
+
+    background-image: url(logo/logo-site-bs-petit.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.redirection{
+    font-size: 4vw;
+    color: black;
+    animation: fondu 0.3s infinite alternate;
+    z-index: 200;
+}
