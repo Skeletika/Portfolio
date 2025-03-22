@@ -97,7 +97,7 @@ function scrollToSection(event, ancreId) {
 }
 
 function redirectToPage(event, pageName, ancreId) {
-
+    console.log(window.location.pathname);
     event.preventDefault();
     if(window.location.pathname === pageName){            // si on est déjà dans la page
         scrollToSection(event,ancreId);
