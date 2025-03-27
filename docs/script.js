@@ -17,7 +17,6 @@ function loadHeaderFooter() {
 
 document.addEventListener('scroll', function(){
     let scrollY = window.scrollY;
-    console.log(scrollY);
 });
 // Charger le header une fois la page chargée
 
@@ -156,6 +155,7 @@ function showProjet(id){
     let text = projet.querySelector('.info .info-content').textContent;
     let software = projet.querySelector('.info .info-software').textContent;
     let images = projet.querySelectorAll('.info img');
+    let videos = projet.querySelectorAll('.info video');
     
     let titre = document.createElement('h3');
     titre.textContent = title;
@@ -169,12 +169,17 @@ function showProjet(id){
     logiciel.textContent = software;
     rightContent.appendChild(logiciel);
 
+    videos.forEach(video => {
+        let vid = document.createElement('video');
+        video.currentsrc = vid.src; 
+        leftContent.appendChild(video);
+    });
+
     images.forEach(image => {
         let img = document.createElement('img');
         img.src = image.src;
         leftContent.appendChild(img);
     });
-
     container.style.display = "flex";
 }
 
@@ -186,6 +191,9 @@ function closeProjet(){
     content.querySelectorAll("*").forEach(element => {
         // Supprime les images
         element.querySelectorAll("img").forEach(img => img.remove());
+
+        element.querySelectorAll("video").forEach(video => video.remove());
+        
         // Supprime les titres
         element.querySelectorAll("h3").forEach(title => title.remove());
         // Supprime les paragraphes
