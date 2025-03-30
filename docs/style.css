@@ -4,12 +4,23 @@
     font-style: normal;
 }
 
+:root{
+    --MainColor : #0BB7BD;
+    --SecondColor:#B8EAEC;
+    --ThirdColor: #FFFFFF;
+    --InverseColorWtoB: #FFFFFF;
+    --InverseColorBtoW: #000000;
+    --ColorOne: #5FB0BB;
+    --ColorWtoTransparent: #FFFFFF;
+}
+
 .doc {
     padding-top : 40px;
     scroll-snap-type: y mandatory;
+    background-color: var(--ThirdColor);
 }
 .section{
-    background-color: #ffffff;
+    background-color: var(--ThirdColor);
     height: auto;
     margin : 70px 150px;
 }
@@ -21,7 +32,7 @@
 .design1{
         background: 
             url('Graphic_elements/fond-graphique-p1.png') no-repeat center bottom, /* Image décorative */
-            #0BB7BD;  /* Couleur de fond */
+            var(--MainColor);  /* Couleur de fond */
         background-size: 
             100% 250px,  /* L'image prend toute la largeur, hauteur fixe */
             cover;       /* La couleur couvre le reste */
@@ -32,7 +43,7 @@
 .design2{
     background: 
     url('Graphic_elements/fond-graphique-p2.png') no-repeat center top, /* Image décorative */
-    #0BB7BD;  /* Couleur de fond */
+    var(--MainColor);  /* Couleur de fond */
     background-size: 
      100% 250px,  /* L'image prend toute la largeur, hauteur fixe */
         cover; 
@@ -54,9 +65,10 @@ h1{
     margin: 40px 0;
     text-align: left;
     border-radius: 60px;
-    background-color: white;
-    box-shadow: -11px 11px 2px #B8EAEC;
+    background-color: var(--ColorWtoTransparent);
+    box-shadow: -11px 0px 6px #B8EAEC;
     padding: 0 5%;
+    color : var(--InverseColorBtoW);
 }
 .container-blue p {
     font-size: 25px ;
@@ -72,7 +84,8 @@ h1{
 }
 .container-white h2{
     font-size : 67px; 
-    margin : auto 25px; 
+    margin : auto 25px;
+    color : var(--InverseColorBtoW); 
 }
 
 .presentation{
@@ -94,10 +107,11 @@ h1{
 
 #img-presentation{
     max-width: 30%;
+    height: 60%;
     width: auto;
-    height: auto;
+    object-fit: cover;
     border-radius: 35% 30px  ;
-    box-shadow: -15px 10px  2px #B8EAEC;
+    box-shadow: -15px 0px 6px var(--SecondColor);
 }
 
 .presentation-content{
@@ -112,27 +126,36 @@ h1{
     margin : 10px 0;
     text-align: left;
     border-radius: 60px;
-    background-color: white;
-    box-shadow: -11px 11px 2px #B8EAEC;
-    padding: 0 5%;
+    background-color: var(--ColorWtoTransparent);
+    box-shadow: -11px 0px 6px var(--SecondColor);
+    color : var(--InverseColorBtoW);
+    padding: 2% 5%;
+    margin: 2% 0;
 }
 .presentation-content h2 {
     font-size: 60px;
     border-radius: 60px;
-    box-shadow: -11px 11px 2px #B8EAEC;
-    background-color: white;
+    background-color: var(--ColorWtoTransparent);
+    box-shadow: -11px 0px 6px var(--SecondColor);
+    color : var(--InverseColorBtoW);
+    text-align: left;
+    padding: 2% 5%;
+    margin: 2% 0;
 }
 
 .presentation-content h3{
     font-size: 45px;
     border-radius: 60px;
-    text-align: right;
-    box-shadow: -11px 11px 2px #B8EAEC;
-    background-color: white;
-    padding: 0 5%;
+    text-align: left;
+    background-color: var(--ColorWtoTransparent);
+    box-shadow: -11px 0px 6px var(--SecondColor);
+    color : var(--InverseColorBtoW);
+    padding: 2% 5%;
+    margin: 2% 0;
 }
 
 #logo-mds{
+    margin: 5% 0;
     width: 25%;
     align-self: flex-start;
 }
@@ -160,7 +183,7 @@ h1{
 .competence-box{
     width: 20%;
     height: 100%;
-    background-color: #0BB7BD;
+    background-color: var(--MainColor);
     border-radius: 40px;
     padding : 0px;
 
@@ -175,7 +198,7 @@ h1{
     font-family: "kade", sans-serif;
     font-weight: 500;
     font-style: normal;
-
+    color: var(--InverseColorBtoW);
     width: 90%;
     min-height: 150px;
     padding: 0 10px;
@@ -214,10 +237,11 @@ h1{
 }
 
 .competence-list li:hover{
-    background-color: rgb(95, 176, 187);
+    background-color: var(--ColorOne);
     text-indent: -40%;
     border: 1px solid white;
     box-shadow: 0px 0px 15px white;
+    color: var(--InverseColorBtoW);
     padding: calc(10% - 1px) 0;
 }
 
@@ -297,7 +321,7 @@ h1{
     height: 70%;
     width: 14%;
     padding: 20px 20px 30px;
-    box-shadow: 12px 12px 2px #B8EAEC;
+    box-shadow: 12px 12px 2px var(--SecondColor);
     transition-duration: 1s;
     -webkit-border-radius: 25px;
     -moz-border-radius: 25px;
@@ -448,4 +472,56 @@ h1{
     color: black;
     animation: fondu 0.3s infinite alternate;
     z-index: 200;
+}
+
+/* Darmode */
+/* From Uiverse.io by cuzpq */ 
+.theme-checkbox {
+    --toggle-size: 16px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 6.25em;
+    height: 3.125em;
+    background: -webkit-gradient(linear, left top, right top, color-stop(50%, #efefef), color-stop(50%, #2a2a2a)) no-repeat;
+    background: -o-linear-gradient(left, #efefef 50%, #2a2a2a 50%) no-repeat;
+    background: linear-gradient(to right, #efefef 50%, #2a2a2a 50%) no-repeat;
+    background-size: 205%;
+    background-position: 0;
+    -webkit-transition: 0.4s;
+    -o-transition: 0.4s;
+    transition: 0.4s;
+    border-radius: 99em;
+    position: fixed;
+    cursor: pointer;
+    font-size: var(--toggle-size);
+    bottom: 3%;
+    right: 3%;
+}
+
+.theme-checkbox::before {
+    content: "";
+    width: 2.25em;
+    height: 2.25em;
+    position: absolute;
+    top: 0.438em;
+    left: 0.438em;
+    background: -webkit-gradient(linear, left top, right top, color-stop(50%, #efefef), color-stop(50%, #2a2a2a)) no-repeat;
+    background: -o-linear-gradient(left, #efefef 50%, #2a2a2a 50%) no-repeat;
+    background: linear-gradient(to right, #efefef 50%, #2a2a2a 50%) no-repeat;
+    background-size: 205%;
+    background-position: 100%;
+    border-radius: 50%;
+    -webkit-transition: 0.4s;
+    -o-transition: 0.4s;
+    transition: 0.4s;
+}
+
+.theme-checkbox:checked::before {
+    left: calc(100% - 2.25em - 0.438em);
+    background-position: 0;
+}
+
+.theme-checkbox:checked {
+    background-position: 100%;
 }

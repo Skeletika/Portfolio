@@ -10,16 +10,16 @@
     </head>
     <body>
         <div id="header-container"></div> <div id="body"></div>
+        <input type="checkbox" id="mod" class="theme-checkbox" onclick="changeColor()">
     <div class="doc">
-        <div class="section-design design1">
+        <div class="section-design design1 darkmod">
                 <h1 id="projets" class="fh-enter-anim">Mes réalisation</h1>
-            </div>
         </div>
         
         <div class="container-white">
 
             <div id="info-projet">
-                <a id="closeProjet" onclick="closeProjet()"><img src="icons/fermer-la-croix.png" alt="fermer"></a>
+                <a id="closeProjet" onclick="closeProjet()"><img src="icons/fermer-la-croix.png" class="darkmod" alt="fermer"></a>
 
                 <div class="content">
                     <div class="left"> <!-- insersetion de l'image --></div>
@@ -197,8 +197,9 @@
             </div>
         </div>
 
-        <div class="section-design design2"></div>
+        <div class="section-design design2 darkmod"></div>
     </div>
+
         <div id="footer-container"></div>
         <script src="script.js"></script>
     </body>

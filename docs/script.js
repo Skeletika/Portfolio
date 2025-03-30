@@ -201,3 +201,77 @@ function closeProjet(){
     });
 
 }
+
+// color #0BB7BD --> #030a4f MainColor
+// color #B8EAEC --> #000000 SecondColor
+// color #FFFFFF --> #1d1d1d ThirdColor
+// color #FFFFFF --> #000000 InverseColorWtoB
+// color #000000 --> #FFFFFF InverseColorBtoW
+// color #5FB0BB --> #030a4f ColorOne
+// transparent #FFFFFF --> #FFFFFF00 ColorWtoTransparent
+// shadow #0000007F --> #FFFFFF7F ColorShadow
+function changeColor() {
+    let mod = document.getElementById('mod');
+    if (mod.checked == true) {
+        darkMode();
+    }
+    else{
+        lightMode();
+    }
+}
+
+function darkMode(){
+    document.documentElement.style.setProperty('--MainColor', '#030a4f');
+    document.documentElement.style.setProperty('--SecondColor', '#000000');
+    document.documentElement.style.setProperty('--ThirdColor', '#1d1d1d');
+    document.documentElement.style.setProperty('--InverseColorWtoB', '#000000');
+    document.documentElement.style.setProperty('--InverseColorBtoW', '#FFFFFF');
+    document.documentElement.style.setProperty('--ColorOne', '#030a4f');
+    document.documentElement.style.setProperty('--ColorWtoTransparent', '#FFFFFF00');
+    document.documentElement.style.setProperty('--ColorShadow', '#FFFFFF7F');
+    let images = document.querySelectorAll('.darkmod');
+    console.log(images);
+    images.forEach(image => {
+        let bgImage = window.getComputedStyle(image).backgroundImage; // Récupère le background-image
+        if(bgImage !== 'none'){
+            // Sépare le nom de fichier et l'extension
+            let lastDotIndex = bgImage.lastIndexOf(".");
+            let newBgImage = bgImage.slice(0, lastDotIndex) + "-dark" + bgImage.slice(lastDotIndex);
+            image.style.backgroundImage = newBgImage; // Applique la nouvelle image de fond
+        }
+        else{
+            let src = image.src;
+            console.log(image);
+            console.log(src);
+            // Sépare le nom de fichier et l'extension
+            let lastDotIndex = src.lastIndexOf(".");
+            let newSrc = src.slice(0, lastDotIndex) + "-dark" + src.slice(lastDotIndex);
+            image.src = newSrc; // Applique la nouvelle source
+        }
+    });
+};
+
+function lightMode(){
+    document.documentElement.style.setProperty('--MainColor', '#0BB7BD');
+    document.documentElement.style.setProperty('--SecondColor', '#B8EAEC');
+    document.documentElement.style.setProperty('--ThirdColor', '#FFFFFF');
+    document.documentElement.style.setProperty('--InverseColorWtoB', '#FFFFFF');
+    document.documentElement.style.setProperty('--InverseColorBtoW', '#000000');
+    document.documentElement.style.setProperty('--ColorOne', '#5FB0BB');
+    document.documentElement.style.setProperty('--ColorWtoTransparent', '#FFFFFF');
+    document.documentElement.style.setProperty('--ColorShadow', '#FFFFFF7F');
+    let images = document.querySelectorAll('.darkmod');
+    images.forEach(image => {
+        let bgImage = window.getComputedStyle(image).backgroundImage; // Récupère le background-image
+        if(bgImage !== 'none'){
+            let newBgImage = bgImage.replace("-dark","");
+            image.style.backgroundImage = newBgImage; // Applique la nouvelle image de fond
+        }
+        else{
+            let src = image.src; 
+            let newSrc = src.replace("-dark","");
+            image.src = newSrc; // Applique la nouvelle source
+        }
+    });
+};
+

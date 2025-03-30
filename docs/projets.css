@@ -90,8 +90,8 @@
     top: 10%;
     width: 80%;
     height: 80%;
-    background-color: rgb(58, 139, 145);
-    box-shadow:0px 0px 20px 10px rgba(0, 0, 0, 0.502);
+    background-color: var(--ColorOne);
+    box-shadow:0px 0px 20px 10px var(--ColorShadow);
     border-radius: 20px;
     z-index: 100;
 }
@@ -113,7 +113,7 @@
 #closeProjet:hover{
     animation: trouble 0.3s ease-in-out alternate infinite;
     transition: all 0.3s ease-in-out;
-    border: solid 2px black;
+    border: solid 2px var(--InverseColorBtoW);
     border-radius: 50%;
 }
 
@@ -148,7 +148,7 @@
 
     border-radius: 20px 0 0 20px;
     border-right: solid 4px black;
-    background-color: rgba(255, 255, 255, 0.631);
+    background-color: rgba(255, 255, 255, 0.476);
 }
 
 .left img, .left video{
@@ -174,7 +174,8 @@
     padding: 0;
     font-size: 2.5rem;
     text-align: center;
-    background-color: white ;
+    background-color: var(--InverseColorWtoB);
+    color : var(--InverseColorBtoW);
     border-radius: 20px;
 }
 
@@ -182,7 +183,8 @@
     font-size: 1.5rem;
     text-align: justify;
     line-height: 1.5;
-    background-color: rgb(255, 255, 255) ;
+    background-color: var(--InverseColorWtoB);
+    color : var(--InverseColorBtoW);
     border-radius: 20px;
     padding: 15px;
 }
