@@ -201,7 +201,7 @@ function closeProjet(){
     });
 
 }
-
+// [#0BB7DB, #B8EAEC, #FFFFFF, #FFFFFF, #000000, #5FB0BB, #FFFFFF00, #0000007F]
 // color #0BB7BD --> #030a4f MainColor
 // color #B8EAEC --> #000000 SecondColor
 // color #FFFFFF --> #1d1d1d ThirdColor
@@ -230,7 +230,6 @@ function darkMode(){
     document.documentElement.style.setProperty('--ColorWtoTransparent', '#FFFFFF00');
     document.documentElement.style.setProperty('--ColorShadow', '#FFFFFF7F');
     let images = document.querySelectorAll('.darkmod');
-    console.log(images);
     images.forEach(image => {
         let bgImage = window.getComputedStyle(image).backgroundImage; // Récupère le background-image
         if(bgImage !== 'none'){
@@ -241,8 +240,6 @@ function darkMode(){
         }
         else{
             let src = image.src;
-            console.log(image);
-            console.log(src);
             // Sépare le nom de fichier et l'extension
             let lastDotIndex = src.lastIndexOf(".");
             let newSrc = src.slice(0, lastDotIndex) + "-dark" + src.slice(lastDotIndex);

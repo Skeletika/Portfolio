@@ -101,6 +101,7 @@ h1{
 .presentation-info{
     display: flex;
     flex-direction: row;
+    align-items: center;
     gap: 5%;
     justify-content: center;
 }
@@ -497,6 +498,8 @@ h1{
     font-size: var(--toggle-size);
     bottom: 3%;
     right: 3%;
+
+    z-index : 100;
 }
 
 .theme-checkbox::before {

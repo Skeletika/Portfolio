@@ -7,21 +7,40 @@
         <link rel="stylesheet" href="animation.css">
         <link rel="stylesheet" href="ancre.css">
         <link rel="stylesheet" href="projets.css">
+        <link rel="stylesheet" href="jeu.css">
     </head>
     <body>
         <div id="header-container"></div> <div id="body"></div>
         <input type="checkbox" id="mod" class="theme-checkbox" onclick="changeColor()">
     <div class="doc">
-        <div class="section-design design1">
+        <div class="section-design design1 darkmod">
             <h1 id="projets" class="fh-enter-anim">A propos</h1>
         </div>
 
-        </div>
         <div class="container-white">
-            
-        </div>
+            <div id="statue">
+                <h4></h4>
+                <button onclick="closeOverlay(event)">fermer</button>
+            </div>
+
+            <div class="morpion">
+                <div class="jeu">
+                    <span id="0" onclick="play(event)"></span>
+                    <span id="1" onclick="play(event)"></span>
+                    <span id="2" onclick="play(event)"></span>
+                    <span id="3" onclick="play(event)"></span>
+                    <span id="4" onclick="play(event)"></span>
+                    <span id="5" onclick="play(event)"></span>
+                    <span id="6" onclick="play(event)"></span>
+                    <span id="7" onclick="play(event)"></span>
+                    <span id="8" onclick="play(event)"></span>
+                </div>
+                <button onclick="reset()">Rejouer</button>
+                </div>
+            </div>
 
         <div id="footer-container"></div>
         <script src="script.js"></script>
+        <script src="jeu.js"></script>
     </body>
 </html>
