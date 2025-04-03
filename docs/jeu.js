@@ -105,7 +105,7 @@ function overlay(statue){
     });
 
     let aff = document.getElementById("statue");
-    aff.querySelector("h4").textContent = (statue == "fin") ? "Match nul ! Vous avez tout les deux bien joués !" : `Bien joué joueur ${statue} , Tu as Gagné` ;
+    aff.querySelector("h4").textContent = (statue == "fin") ? "Match nul ! Vous avez tout les deux bien joués !" : `Bien joué,  joueur ${statue} , Tu as Gagné` ;
     aff.style.display = "flex";
 }
 
