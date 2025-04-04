@@ -107,38 +107,38 @@ function redirectToPage(event, pageName, ancreId) {
     let newTexte = document.createElement("h1");
     newTexte.classList.add("redirection");
     newTexte.textContent = "Voyage..";
-    // transition.appendChild(newTexte);
+    transition.appendChild(newTexte);
 
-    // let placementTop = 2;
-    // let placementLeft = -10 ;
-    // let colomun = 0;
-    // let Delay = 0;
+    let placementTop = 2;
+    let placementLeft = -10 ;
+    let colomun = 0;
+    let Delay = 0;
 
-    // for (let i = 0; i < 100; i++) {
-    //     let newDiv = document.createElement("div");
-    //     newDiv.classList.add("nuage");
+    for (let i = 0; i < 100; i++) {
+        let newDiv = document.createElement("div");
+        newDiv.classList.add("nuage");
 
-    //     Delay += 70;
+        Delay += 70;
 
-    //     colomun++
-    //     if(colomun == 15) {
-    //         placementTop += 20 ;
-    //         placementLeft = -10;
-    //         Delay = 70;
-    //         colomun = 0;
-    //     };
+        colomun++
+        if(colomun == 15) {
+            placementTop += 20 ;
+            placementLeft = -10;
+            Delay = 70;
+            colomun = 0;
+        };
 
-    //     newDiv.style.animationDelay = Delay + "ms";
-    //     newDiv.style.left = placementLeft + "%";
-    //     newDiv.style.top = placementTop + "%";
+        newDiv.style.animationDelay = Delay + "ms";
+        newDiv.style.left = placementLeft + "%";
+        newDiv.style.top = placementTop + "%";
 
-    //     placementLeft += 10;
+        placementLeft += 10;
 
-    //     transition.appendChild(newDiv);       
-    // }
+        transition.appendChild(newDiv);       
+    }
 
     setTimeout(() => {
-        // window.location.href = pageName + "#" + ancreId;
+        window.location.href = pageName + "#" + ancreId;
     }, 1800); // ms
     };
 }
