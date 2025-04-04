@@ -546,14 +546,11 @@ h1{
     animation : scroll linear;
     animation-timeline: view();
     animation-range: entry 0;
+    background-color: green;
 }
 
 /* Assigner une couleur différente à chaque box */
-.box:nth-child(1) { background-color: blue; }
-.box:nth-child(2) { background-color: rgb(44, 132, 151); }
-.box:nth-child(3) { background-color: rgb(83, 106, 29); }
-.box:nth-child(4) { background-color: rgb(178, 14, 126); }
-.box:nth-child(5) { background-color: rgb(107, 44, 54); }
+.box:nth-child() { background-color: blue; }
 
 @keyframes scroll{
     from{
