@@ -6,27 +6,32 @@
     <title>Mon Site</title>
     <link rel="stylesheet" href="menu.css"> <!-- Ajoute tes styles ici -->
 </head>
-
+<!-- header portfolio web et serveur -->
 <header>
-    <a id="logo" onclick="redirectToPage(event,'/','presentation')"><img class="darkmod" src="logo/logo-site-bs-petit.png" height="100%" alt="Logo SITE"></a>
+    <a id="logo" onclick="redirectToPage(event,'/index.html', 'presentation')" href="/index.html"><img class="darkmod" src="logo/logo-site-bs-petit.png" height="100%" alt="Logo SITE"></a>
     <nav>
         <ul class="menu">
-            <li><a class="princip" onclick="redirectToPage(event,'/', 'presentation')">Présentation</a>
+            <li><a class="princip" onclick="redirectToPage(event,'/index.html', 'presentation')" href="/index.html">Accueil</a>
                 <ul class="sous-menu">
-                    <li><a onclick="redirectToPage(event,'/','competence')">Compétences</a></li>
-                    <li><a onclick="redirectToPage(event,'/', 'parcours')">Parcours</a></li>
+                    <li><a onclick="redirectToPage(event,'/index.html','competence')" href="/index.html">Compétences</a></li>
+                    <li><a onclick="redirectToPage(event,'/index.html', 'parcours')" href="/index.html">Parcours</a></li>
                 </ul>
             </li>
-            <li><a class="princip" onclick="redirectToPage(event,'/projets.html', '')" >Projets</a>
+            <li><a class="princip" onclick="redirectToPage(event,'/projets.html', 'projets')" href="/projets.html" >Projets</a>
             </li>
-            <li><a class="princip" onclick="redirectToPage(event,'/about.html', '')">À propos</a>
+            <li><a class="princip" onclick="redirectToPage(event,'/about.html', 'about')" href="/about.html">À propos</a>
                 <ul class="sous-menu">
-                    <li><a onclick="redirectToPage(event,'/about.html', '')">Qui suis-je ?</a></li>
-                    <li><a onclick="redirectToPage(event,'/about.html', '')">Passions</a></li>
+                    <li><a onclick="redirectToPage(event,'/about.html', 'quisuisje')" href="/about.html">Qui suis-je ?</a></li>
+                    <li><a onclick="redirectToPage(event,'/about.html', '')" href="/about.html">Passions</a></li>
                 </ul>
             </li>
         </ul>
     </nav>
+    <a class="callToAction" onclick="redirectToPageExterne(event,'contact/public/contact-form.php')">Me contacter</a>
+
 </header>
+<div id="transition">
+    <h1 class="redirection-title">Redirection</h1>
+</div>
 
 </html>

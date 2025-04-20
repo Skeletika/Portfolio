@@ -6,14 +6,17 @@
     justify-content: center;
     align-items: center;
     gap : 30px;
+    position: relative;
+    z-index: 70;
 }
 
 .jeu{
-    margin: auto;
+    margin: 10% auto;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     gap : 6px;
+
 }
 
 .jeu span{
@@ -73,5 +76,5 @@ button:hover{
     left: 35%;
     top : calc(50% -100px);
 
-    z-index: 100;
+    z-index: 1000;
 }

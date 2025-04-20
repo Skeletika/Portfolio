@@ -9,44 +9,60 @@
         <link rel="stylesheet" href="projets.css">
         <link rel="stylesheet" href="jeu.css">
     </head>
+
     <body>
-        <div id="header-container"></div> <div id="body"></div>
-        <input type="checkbox" id="mod" class="theme-checkbox" onclick="changeColor()">
-    <div class="doc">
-        <div class="section-design design1 darkmod">
-            <h1 id="projets" class="fh-enter-anim">A propos</h1>
+        <div id="header-container"></div> <!--header-->
+    
+        <div class="doc" id="main-content"> <!--Contenu de la page-->
+            <div class="section-design design1 darkmod">
+                <h1 id="about" class="fh-enter-anim">A propos</h1>
+            </div>
+    
+            <div class="container-white">
+    
+                <div class="presentation-about" id="quisuisje" >
+                    <div class="presentation-info"> 
+                        <img class="fg-enter-anim" src="images/Josh.jpg" alt="photo-portait" id="img-presentation">
+                        <div class="presentation-content">
+                            <p class="fd-enter-anim paragraphe">
+                                Je m'appelle Doucet Joshua, étudiant passionné en première année de Bachelor Multimédia et Web à MyDigitalSchool. Curieux de nature et investi dans tout ce que j’entreprends, j’ai découvert très tôt un intérêt pour la conception de sites internet. Depuis le lycée, je m’investis pleinement pour développer mes compétences en HTML, CSS, JavaScript et d'autres outils du web.
+                                Mon parcours est marqué par l’autonomie, l’adaptabilité et un esprit d’analyse que j’applique aussi bien dans mes projets personnels que dans mes missions en équipe. Je construis actuellement mon portfolio pour partager mon évolution, mes réalisations, et montrer mon envie de progresser dans le développement web.
+                                Toujours en quête de nouvelles connaissances, je vois chaque défi comme une opportunité d’apprendre et de grandir.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <br><br><br><br>
+                <div id="statue">
+                    <h4></h4>
+                    <button onclick="closeOverlay(event)">fermer</button>
+                </div>
+                <div class="morpion">
+                    <div class="jeu">
+                        <span id="0" onclick="play(event)"></span>
+                        <span id="1" onclick="play(event)"></span>
+                        <span id="2" onclick="play(event)"></span>
+                        <span id="3" onclick="play(event)"></span>
+                        <span id="4" onclick="play(event)"></span>
+                        <span id="5" onclick="play(event)"></span>
+                        <span id="6" onclick="play(event)"></span>
+                        <span id="7" onclick="play(event)"></span>
+                        <span id="8" onclick="play(event)"></span>
+                    </div>
+                    <button onclick="reset()">Rejouer</button>
+                </div>
+    
+            </div>
+    
+            <div class="section-design design2 darkmod">
+                <!-- <div class="star">
+                    <img src="Graphic_elements/fond-etoile-2.png" class="darkmod" alt="fond étoilé">
+                    <img src="Graphic_elements/fond-etoile-2.png" alt="fond étoilé"> 
+                </div> -->
+            </div>
         </div>
-
-        <div class="container-white">
-
-            <div id="statue">
-                <h4></h4>
-                <button onclick="closeOverlay(event)">fermer</button>
-            </div>
-
-            <div class="morpion">
-                <div class="jeu">
-                    <span id="0" onclick="play(event)"></span>
-                    <span id="1" onclick="play(event)"></span>
-                    <span id="2" onclick="play(event)"></span>
-                    <span id="3" onclick="play(event)"></span>
-                    <span id="4" onclick="play(event)"></span>
-                    <span id="5" onclick="play(event)"></span>
-                    <span id="6" onclick="play(event)"></span>
-                    <span id="7" onclick="play(event)"></span>
-                    <span id="8" onclick="play(event)"></span>
-                </div>
-                <button onclick="reset()">Rejouer</button>
-                </div>
-            </div>
-
-        <div class="section-design design2 darkmod">
-        
-            <!-- <div class="star"><img src="Graphic_elements/fond-etoile.png" alt="fond étoilé"></div>
-        </div> -->
-
-        <div id="footer-container"></div>
-        <script src="script.js"></script>
-        <script src="jeu.js"></script>
+    
+        <div id="footer-container"></div> <!--footer-->
+    
     </body>
 </html> 

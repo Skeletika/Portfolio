@@ -32,9 +32,11 @@ function play(event){
             document.querySelectorAll(`span[id='${solution[0]}'], span[id='${solution[1]}'], span[id='${solution[2]}']`).forEach(spanG => {
                 spanG.style.backgroundColor = "green"; // Exemple : fond jaune
             });
+            console.log("vainqueur");
             return overlay(tour[1]);
         }
         else if (tour[2] == "fin"){
+            console.log("match null");
             return overlay(tour[2]);
         }
     }
@@ -105,6 +107,7 @@ function overlay(statue){
     });
 
     let aff = document.getElementById("statue");
+    console.log(aff);
     aff.querySelector("h4").textContent = (statue == "fin") ? "Match nul ! Vous avez tout les deux bien joués !" : `Bien joué,  joueur ${statue} , Tu as Gagné` ;
     aff.style.display = "flex";
 }

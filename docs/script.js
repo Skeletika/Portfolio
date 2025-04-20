@@ -2,17 +2,14 @@
 // window.location.href
 function loadHeaderFooter() {
     if(window.location.href.includes("github")){
-        console.log('github');
         fetch('header-git.html')
         .then(response => response.text())
         .then(data => {
             document.getElementById('header-container').innerHTML = data;
-            console.log(data);
         })
         .catch(error => console.error('Erreur lors du chargement du header:', error));
     }
     else{
-        console.log('serveur');
         fetch('header.html')
         .then(response => response.text())
         .then(data => {
@@ -27,11 +24,12 @@ function loadHeaderFooter() {
     })
     .catch(error => console.error('Erreur lors du chargement du footer:', error));
 }
-
-document.addEventListener('scroll', function(){
-    let scrollY = window.scrollY;
-});
 // Charger le header une fois la page chargée
+
+// document.addEventListener('scroll', function(){
+//     let scrollY = window.scrollY;
+// });
+
 
 function anim_scroll() {
             let elementFonduGauche = document.querySelectorAll('.fg-enter-anim');
@@ -42,7 +40,7 @@ function anim_scroll() {
 
             elementFonduGauche.forEach(function(elementFonduGauche) {
                 let position = elementFonduGauche.getBoundingClientRect();
-                if((position.top <= window.innerHeight - 50) && (position.bottom >= -50)) {
+                if((position.top <= window.innerHeight - 50) && (position.bottom >= -100)) {
                     elementFonduGauche.classList.add('anim-fg-E');
                 }
                 else{
@@ -51,7 +49,7 @@ function anim_scroll() {
             });            
             elementComptenceLegend.forEach(function(elementComptenceLegend){
                 let position = elementComptenceLegend.getBoundingClientRect();
-                if((position.top <= window.innerHeight - 50) && (position.bottom >= -50)){
+                if((position.top <= window.innerHeight - 50) && (position.bottom >= -100)){
                     elementComptenceLegend.classList.add('anim-fondu');
                 }
                 else{
@@ -60,7 +58,7 @@ function anim_scroll() {
             });
             elementCompetence.forEach(function(elementCompetence){
                 let position = elementCompetence.getBoundingClientRect();
-                if((position.top <= window.innerHeight - 50) && (position.bottom >= -50)){
+                if((position.top <= window.innerHeight - 50) && (position.bottom >= -100)){
                     elementCompetence.classList.add('anim-competence-E');
                 }
                 else{
@@ -69,7 +67,7 @@ function anim_scroll() {
             }); 
             elementFonduHaut.forEach(function(elementFonduHaut){
                 let position = elementFonduHaut.getBoundingClientRect();
-                if((position.top <= window.innerHeight - 50) && (position.bottom >= -50)){
+                if((position.top <= window.innerHeight - 50) && (position.bottom >= -100)){
                     elementFonduHaut.classList.add('anim-fh-E');
                 }
                 else{
@@ -79,7 +77,7 @@ function anim_scroll() {
             });
             elementFonduDroite.forEach(function(elementFonduDroite){
                 let position = elementFonduDroite.getBoundingClientRect();
-                if((position.top <= window.innerHeight - 50) && (position.bottom >= -50)){
+                if((position.top <= window.innerHeight - 50) && (position.bottom >= -100)){
                     elementFonduDroite.classList.add('anim-fd-E');
                 }
                 else{
@@ -98,62 +96,91 @@ document.addEventListener('DOMContentLoaded', function(){
 
 document.addEventListener('scroll', anim_scroll);
 
-
-
-function scrollToSection(event, ancreId) {
-
+function scrollToSection(ancreId) {
     let section = document.getElementById(ancreId);
     section.scrollIntoView({
         behavior: "smooth",  // Animation fluide
     });
 }
 
+function redirectToPageExterne(event, pageName){
+    event.preventDefault();
+    let transition = document.getElementById("transition");
+    transition.classList.add("transition-page-enter");
+    transition.style.display = "flex";
+    setTimeout(() => {
+        window.location = pageName ;
+    }, 700);
+}
+
 function redirectToPage(event, pageName, ancreId) {
     event.preventDefault();
-    if(window.location.pathname === pageName){            // si on est déjà dans la page
-        scrollToSection(event,ancreId);
+    const ancreElement = document.getElementById(ancreId);
+    if (ancreElement) {
+        // L'ancre existe dans la page actuelle
+        scrollToSection(ancreId);
     }
     else{
-    let transition = document.getElementById("body");
-    transition.classList.add("page-transition");
+        const url = event.currentTarget.href; // currentTarget pour choisir l'element de lien et pas d'autre comme img
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          // Créer un document temporaire
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(html, 'text/html');
 
-    let newTexte = document.createElement("h1");
-    newTexte.classList.add("redirection");
-    newTexte.textContent = "Voyage..";
-    transition.appendChild(newTexte);
+          // Extraire le nouveau contenu
+            const newContent = doc.querySelector('#main-content').innerHTML;
 
-    let placementTop = 2;
-    let placementLeft = -10 ;
-    let colomun = 0;
-    let Delay = 0;
-
-    for (let i = 0; i < 100; i++) {
-        let newDiv = document.createElement("div");
-        newDiv.classList.add("nuage");
-
-        Delay += 70;
-
-        colomun++
-        if(colomun == 15) {
-            placementTop += 20 ;
-            placementLeft = -10;
-            Delay = 70;
-            colomun = 0;
-        };
-
-        newDiv.style.animationDelay = Delay + "ms";
-        newDiv.style.left = placementLeft + "%";
-        newDiv.style.top = placementTop + "%";
-
-        placementLeft += 10;
-
-        transition.appendChild(newDiv);       
+            let transition = document.getElementById("transition");
+            transition.classList.add("transition-page-enter");
+            transition.style.display = "flex";
+            setTimeout(() => {
+                document.querySelector('#main-content').innerHTML = newContent;
+                if(ancreId){
+                    scrollToSection(ancreId); //scroll vers l'ancre demandée
+                }
+                let mod = document.getElementById('mod');
+                if(mod.checked == true){
+                    lightModeImage();
+                    darkModeImage();
+                    }
+                transition.classList.remove("transition-page-enter");
+                transition.classList.add("transition-page-exit");
+                }, 700);
+        
+        anim_scroll(); // Actualisation du contenu animé
+    });
     }
+}
 
-    setTimeout(() => {
-        window.location.href = pageName + "#" + ancreId;
-    }, 1800); // ms
-    };
+function search(event, filter){
+
+    let buttonActive = document.querySelectorAll('.search button');
+    buttonActive.forEach(button => {
+        button.classList.remove('active');
+    });
+    event.target.classList.toggle('active');
+
+    let visible = document.querySelectorAll(filter);
+    let notVisible = document.querySelectorAll('.item-projets');
+    notVisible.forEach(element => {
+        element.classList.add('hidden');
+    });
+    visible.forEach(element => {
+        element.classList.toggle('hidden');
+    });
+}
+
+function resetFilter(){
+    let buttonActive = document.querySelectorAll('.search button');
+    buttonActive.forEach(button => {
+        button.classList.remove('active');
+    });
+    let notVisible = document.querySelectorAll('.item-projets');
+    notVisible.forEach(element => {
+        element.classList.remove('hidden');
+    });
 }
 
 function showProjet(id){
@@ -192,6 +219,9 @@ function showProjet(id){
         leftContent.appendChild(img);
     });
     container.style.display = "flex";
+
+    let blur = document.getElementById("blur");
+    blur.style.display = "flex";
 }
 
 function closeProjet(){
@@ -210,7 +240,9 @@ function closeProjet(){
         // Supprime les paragraphes
         element.querySelectorAll("p").forEach(paragraph => paragraph.remove());
     });
-
+    
+    let blur = document.getElementById("blur");
+    blur.style.display = "none";
 }
 // [#0BB7DB, #B8EAEC, #FFFFFF, #FFFFFF, #000000, #5FB0BB, #FFFFFF00, #0000007F]
 // color #0BB7BD --> #030a4f MainColor
@@ -221,6 +253,7 @@ function closeProjet(){
 // color #5FB0BB --> #030a4f ColorOne
 // transparent #FFFFFF --> #FFFFFF00 ColorWtoTransparent
 // shadow #0000007F --> #FFFFFF7F ColorShadow
+
 function changeColor() {
     let mod = document.getElementById('mod');
     if (mod.checked == true) {
@@ -240,6 +273,22 @@ function darkMode(){
     document.documentElement.style.setProperty('--ColorOne', '#030a4f');
     document.documentElement.style.setProperty('--ColorWtoTransparent', '#FFFFFF00');
     document.documentElement.style.setProperty('--ColorShadow', '#FFFFFF7F');
+    darkModeImage();
+};
+
+function lightMode(){
+    document.documentElement.style.setProperty('--MainColor', '#0BB7BD');
+    document.documentElement.style.setProperty('--SecondColor', '#B8EAEC');
+    document.documentElement.style.setProperty('--ThirdColor', '#FFFFFF');
+    document.documentElement.style.setProperty('--InverseColorWtoB', '#FFFFFF');
+    document.documentElement.style.setProperty('--InverseColorBtoW', '#000000');
+    document.documentElement.style.setProperty('--ColorOne', '#5FB0BB');
+    document.documentElement.style.setProperty('--ColorWtoTransparent', '#FFFFFF');
+    document.documentElement.style.setProperty('--ColorShadow', '#FFFFFF7F');
+    lightModeImage()
+};
+
+function darkModeImage(){
     let images = document.querySelectorAll('.darkmod');
     images.forEach(image => {
         let bgImage = window.getComputedStyle(image).backgroundImage; // Récupère le background-image
@@ -257,17 +306,9 @@ function darkMode(){
             image.src = newSrc; // Applique la nouvelle source
         }
     });
-};
+}
 
-function lightMode(){
-    document.documentElement.style.setProperty('--MainColor', '#0BB7BD');
-    document.documentElement.style.setProperty('--SecondColor', '#B8EAEC');
-    document.documentElement.style.setProperty('--ThirdColor', '#FFFFFF');
-    document.documentElement.style.setProperty('--InverseColorWtoB', '#FFFFFF');
-    document.documentElement.style.setProperty('--InverseColorBtoW', '#000000');
-    document.documentElement.style.setProperty('--ColorOne', '#5FB0BB');
-    document.documentElement.style.setProperty('--ColorWtoTransparent', '#FFFFFF');
-    document.documentElement.style.setProperty('--ColorShadow', '#FFFFFF7F');
+function lightModeImage(){
     let images = document.querySelectorAll('.darkmod');
     images.forEach(image => {
         let bgImage = window.getComputedStyle(image).backgroundImage; // Récupère le background-image
@@ -281,5 +322,4 @@ function lightMode(){
             image.src = newSrc; // Applique la nouvelle source
         }
     });
-};
-
+}
