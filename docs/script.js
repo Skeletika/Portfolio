@@ -114,45 +114,87 @@ function redirectToPageExterne(event, pageName){
 }
 
 function redirectToPage(event, pageName, ancreId) {
+    console.log("🔁 Fonction redirectToPage appelée");
+    console.log("📄 pageName :", pageName);
+    console.log("🔗 ancreId :", ancreId);
+
     event.preventDefault();
+    console.log("🛑 Comportement par défaut annulé");
+
     const ancreElement = document.getElementById(ancreId);
+    console.log("🔎 Vérification de l'ancre dans la page actuelle :", ancreElement);
+
     if (ancreElement) {
-        // L'ancre existe dans la page actuelle
+        console.log("✅ L'ancre existe déjà dans la page, on scrolle");
         scrollToSection(ancreId);
-    }
-    else{
-        const url = event.currentTarget.href; // currentTarget pour choisir l'element de lien et pas d'autre comme img
+    } else {
+        const url = event.currentTarget.href;
+        console.log("🌐 URL à charger :", url);
+
         fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          // Créer un document temporaire
-            const parser = new DOMParser();
-            const doc = parser.parseFromString(html, 'text/html');
+            .then(res => {
+                console.log("📥 Réponse du fetch reçue");
+                if (!res.ok) throw new Error("❌ Erreur HTTP : " + res.status);
+                return res.text();
+            })
+            .then(html => {
+                console.log("📄 HTML reçu, parsing...");
 
-          // Extraire le nouveau contenu
-            const newContent = doc.querySelector('#main-content').innerHTML;
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(html, 'text/html');
 
-            let transition = document.getElementById("transition");
-            transition.classList.add("transition-page-enter");
-            transition.style.display = "flex";
-            setTimeout(() => {
-                document.querySelector('#main-content').innerHTML = newContent;
-                if(ancreId){
-                    scrollToSection(ancreId); //scroll vers l'ancre demandée
+                const newContentElement = doc.querySelector('#main-content');
+                if (!newContentElement) {
+                    console.error("❗ #main-content introuvable dans la page chargée");
+                    return;
                 }
-                let mod = document.getElementById('mod');
-                if(mod.checked == true){
-                    lightModeImage();
-                    darkModeImage();
+
+                const newContent = newContentElement.innerHTML;
+                console.log("📦 Nouveau contenu extrait");
+
+                let transition = document.getElementById("transition");
+                if (!transition) {
+                    console.warn("⚠️ Élément #transition introuvable");
+                } else {
+                    console.log("🎬 Lancement de la transition");
+                    transition.classList.add("transition-page-enter");
+                    transition.style.display = "flex";
+                }
+
+                setTimeout(() => {
+                    console.log("💾 Injection du nouveau contenu dans #main-content");
+                    document.querySelector('#main-content').innerHTML = newContent;
+
+                    if (ancreId) {
+                        console.log("🎯 Scroll vers l'ancre :", ancreId);
+                        scrollToSection(ancreId);
                     }
-                transition.classList.remove("transition-page-enter");
-                transition.classList.add("transition-page-exit");
+
+                    let mod = document.getElementById('mod');
+                    if (mod && mod.checked === true) {
+                        console.log("🌙 Mode sombre activé : mise à jour des images");
+                        lightModeImage();
+                        darkModeImage();
+                    } else {
+                        console.log("☀️ Mode clair actif ou #mod introuvable");
+                    }
+
+                    if (transition) {
+                        console.log("🎬 Fin de la transition");
+                        transition.classList.remove("transition-page-enter");
+                        transition.classList.add("transition-page-exit");
+                    }
                 }, 700);
-        
-        anim_scroll(); // Actualisation du contenu animé
-    });
+
+                console.log("✨ Lancement de l'animation scroll");
+                anim_scroll();
+            })
+            .catch(error => {
+                console.error("🚨 Erreur durant le fetch ou le traitement :", error);
+            });
     }
 }
+
 
 function search(event, filter){
 
@@ -250,7 +292,7 @@ function closeProjet(){
 // color #FFFFFF --> #1d1d1d ThirdColor
 // color #FFFFFF --> #000000 InverseColorWtoB
 // color #000000 --> #FFFFFF InverseColorBtoW
-// color #5FB0BB --> #030a4f ColorOne
+// color #5FB0BB --> #030a4f  
 // transparent #FFFFFF --> #FFFFFF00 ColorWtoTransparent
 // shadow #0000007F --> #FFFFFF7F ColorShadow
 
