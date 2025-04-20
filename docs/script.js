@@ -121,8 +121,7 @@ function redirectToPage(event, pageName, ancreId) {
         scrollToSection(ancreId);
     }
     else{
-        const url = event.currentTarget.href; // currentTarget pour choisir l'element de lien et pas d'autre comme img
-        console.log(url);
+        const url = pageName; // currentTarget pour choisir l'element de lien et pas d'autre comme img
         fetch(url)
         .then(res => res.text())
         .then(html => {
@@ -132,6 +131,7 @@ function redirectToPage(event, pageName, ancreId) {
 
           // Extraire le nouveau contenu
             const newContent = doc.querySelector('#main-content').innerHTML;
+            console.log(newContent);
 
             let transition = document.getElementById("transition");
             transition.classList.add("transition-page-enter");
