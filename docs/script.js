@@ -144,6 +144,7 @@ function redirectToPage(event, pageName, ancreId) {
                 const doc = parser.parseFromString(html, 'text/html');
 
                 const newContentElement = doc.querySelector('#main-content');
+                console.log(newContentElement);
                 if (!newContentElement) {
                     console.error("❗ #main-content introuvable dans la page chargée");
                     return;
