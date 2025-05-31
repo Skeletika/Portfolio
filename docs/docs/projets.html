@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Projets</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="animation.css">
+        <link rel="stylesheet" href="ancre.css">
+        <link rel="stylesheet" href="projets.css">
+    </head>
+
+    <body>
+        <div id="header-container"></div> <!--header-->
+
+        <div class="doc" id="main-content"> <!--Contenu de la page-->
+            <div class="section-design design1 darkmod">
+                    <h1 id="projets" class="flottement">Mes réalisations</h1>
+            </div>
+            
+            <div class="container-white">
+                <div class="search"> <!--Boutons de recherche/filtes su les projets-->
+                    <span><button onclick="resetFilter()">Tout</button></span>
+                    <span>
+                        <button onclick="search(event,'.code')">Code</button> 
+                        <button onclick="search(event,'.cms')">CMS</button>
+                        <button onclick="search(event,'.design')">Design</button>
+                        <button onclick="search(event,'.others')">Créatif / Autres</button>
+                    </span>
+                </div>
+                <div id="blur"></div>    <!--Fond en flou, importance au projet cliqué-->
+                <div id="info-projet">
+                    <a id="closeProjet" onclick="closeProjet()"><img src="icons/fermer-la-croix.png" class="darkmod" alt="fermer"></a>
+    
+                    <div class="content">
+                        <div class="left"> <!-- insertion de l'image --></div>
+                        <div class="right"><!-- insertion de la description --></div>
+                    </div>
+                </div>
+    
+                <div class="list-projets anim-scale-items">
+                    <div class="item-projets design" id="infographie" onclick="showProjet('infographie')">
+                        <img 
+                        src="contenu/Projets/redim/infographie-tiktok.png" alt="image inforgraphie tiktok">
+                        <div class="description">
+                            <h4>Infographie TikTok</h4>
+                            <p>Infographie sur TikTok réalisée en cours de communication digital.</p>
+                            <p>Réalisé sur Figma</p>
+                        </div>
+    
+                        <div class="info">
+                            <p class="info-title">Infographie TikTok</p>
+                            <p class="info-content">Infographie sur TikTok réalisée en cours de communication digital.
+                                Utilsation de la charte graphique tiktok et de son logo.
+                                Informations à but de l'utilisation de la plateforme pour un meilleur
+                                contrôle sur le calendrier éditorial de publication d'une marque ainsi que sa cible.
+                            </p>
+                            <p class="info-software">Réalisé sur Figma</p>
+                            <img class="img-projet" src="contenu/Projets/infographie-tiktok.png" alt="image inforgraphie tiktok">
+                        </div>
+    
+                    </div>
+    
+                    <div class="item-projets design" id="ochome" onclick="showProjet('ochome')">
+                        <img 
+                        src="contenu/Projets/redim/logo-OCHome.png" alt="image logo OCHome">
+                        <div class="description">
+                            <h4>Logo OCHome</h4>
+                            <p>Logo d'une entreprise fictive de personnalisation de porte d'entrée.</p>
+                            <p>Réalisé sur Adobe Illustrator</p>
+                        </div>
+                        <div class="info">
+                            <p class="info-title">Logo OCHome</p>
+                            <p class="info-content">Logo d'une entreprise fictive de personnalisation de porte d'entrée.
+                                Utilisation de la couleur orange pour la chaleur et le dynamisme, le gris pour la neutralité et la sobriété.
+                                La porte d'entrée est un élément important pour une maison, elle est le premier élément visible.
+                                Le logo doit donc être simple, lisible et représentatif de l'activité de l'entreprise.
+                            </p>
+                            <p class="info-software">Réalisé sur Adobe Illustrator</p>
+                            <img class="img-projet" src="contenu/Projets/logo-OCHome.png" alt="image logo entreprise fictive OCHome">
+                        </div>
+                    </div>
+    
+                    <div class="item-projets design" id="kunel-gaur" onclick="showProjet('kunel-gaur')">
+                        <img 
+                        src="contenu/Projets/redim/flageolet-kunel-gaur.png" alt="image kunel gaur flageolet">
+                        <div class="description">
+                            <h4>Réalisation Kunel Gaur</h4>
+                            <p>Réalisation inspirée de Kunel Gaur, une boite de flageolets.</p>
+                            <p>Réalisé sur Adobe Illustrator et Photoshop</p>
+                        </div>
+                        <div class="info"> 
+                            <p class="info-title">Réalisation Kunel Gaur</p>
+                            <p class="info-content">Réalisations inspirées de Kunel Gaur.
+                                Le concept des emballages noir et blanc simples de GAUR repose sur une esthétique minimaliste et luxueuse. 
+                                En supprimant les couleurs et les éléments graphiques superflus, ces emballages mettent en avant l’élégance, la pureté et l’intemporalité du produit. 
+                                L'utilisation du noir et blanc crée un contraste fort qui évoque le raffinement, la sobriété et une image haut de gamme. 
+                                Ce choix de design permet également de se démarquer visuellement en rayon tout en reflétant une approche moderne et épurée du packaging.
+                            </p>
+                            <p class="info-software">Réalisé sur Adobe Illustrator et Photoshop</p>
+                            <img class="img-projet" src="contenu/Projets/flageolet-kunel-gaur.png" alt="image flageolet kunel gaur">
+                            <img class="img-projet" src="contenu/Projets/pattes-kunel-gaur.png" alt="image pattes kunel gaur">
+                            <img class="img-projet" src="contenu/Projets/chips-kunel-gaur.png" alt="image chips kunel gaur">
+                            <img class="img-projet" src="contenu/Projets/gateaux-kunel-gaur.png" alt="image gateaux kunel gaur">
+                        </div>
+                    </div>
+    
+                    <div class="item-projets design" id="cuisine" onclick="showProjet('cuisine')">
+                        <img 
+                        src="contenu/Projets/redim/page-chef-cuisine-indesign.png" alt="image page indesign chef cuisine">
+                        <div class="description">
+                            <h4>Page Chef Cuisine</h4>
+                            <p>Mise en place d'élément sur Indesign, création de double page de présentation de chef de cuisine et recette attribuée.</p>
+                            <p>Réalisé sur Indesign</p>
+                        </div>
+                        <div class="info">
+                            <p class="info-title">Réalisation Indesign présentation gastronomique</p>
+                            <p class="info-content">Mise en place d'élément sur Indesign, création de double page de présentation de chef de cuisine et recette attribuée.
+                                
+                            </p>
+                            <p class="info-software">Réalisé sur Adobe Indesign</p>
+                            <img class="img-projet" src="contenu/Projets/page-chef-cuisine-indesign.png" alt="image production Indesign chef cuisine">
+                            <img class="img-projet" src="contenu/Projets/page-chef-cuisine-indesign2.png" alt="image production Indesign chef cuisine">
+                        </div>
+                    </div>
+    
+                    <div class="item-projets others" id="mcreator" onclick="showProjet('mcreator')">
+                        <img 
+                        src="contenu/Projets/redim/logo-Mcreator.png" alt="image logo MCreator">
+                        <div class="description">
+                            <h4>Mod Minecraft personnalisé</h4>
+                            <p>Projet de mod Minecraft personnel, création de texture, model 3D, procédures(fonctions), paramétrage, interface visuelle</p>
+                            <p>Réalisé sur MCreator et Blockbench 3D</p>
+                        </div>
+                        <div class="info">
+                            <p class="info-title">Création de contenu de mod Minecraft</p>
+                            <p class="info-content">
+                                Je conçois des modèles 3D avec Blockbench et les intègre dans des mods Minecraft à l’aide de MCreator. 
+                                Ce processus me permet de créer des objets, des blocs, des créatures et d'autres éléments interactifs pour enrichir l’expérience de jeu. 
+                                Je travaille sur la modélisation 3D, le texturing, l’animation et la configuration des fonctionnalités des éléments ajoutés. Grâce à MCreator, 
+                                j’optimise également les interactions en jeu en ajustant les propriétés et comportements des objets créés.
+                            </p>
+                            <p class="info-software">Réalisé sur Blockbench et MCreator</p>
+                            <video class="img-projet" src="contenu/Projets/video-dragon-3d-mc.mp4" type="video/mp4" controls>
+                                Votre navigateur ne supporte pas la lecture de vidéos.
+                            </video>
+                            <img class="img-projet" src="contenu/Projets/screen-parametrage-MCreator.png" alt="image production Mcreator">
+                            <img class="img-projet" src="contenu/Projets/screen-fonction-type-MCreator.png" alt="image production Mcreator">
+                            <img class="img-projet" src="contenu/Projets/screen-fonction-type-MCreator2.png" alt="image production Mcreator">
+                            <img class="img-projet" src="contenu/Projets/screen-overlay-interface-MCreator.png" alt="image production Mcreator">
+                        </div>
+                    </div>
+    
+                    <div class="item-projets cms" id="sikalobi" onclick="showProjet('sikalobi')">
+                        <img 
+                        src="contenu/Projets/redim/screen-sikalobi-site.png" alt="image site sikalobi association">
+                        <div class="description">
+                            <h4>Site Sikalobi</h4>
+                            <p>Création, configuration entière d'un site internet appelé SIKALOBI, une association au service de Kinshasa et basée à Nancy.</p>
+                            <p>Réalisé sur Wordpress, Elementor Pro</p>
+                        </div>
+                        <div class="info">
+                            <p class="info-title">Réalisation d'un site internet complet</p>
+                            <p class="info-content">
+                                Dans le cadre d’un projet de groupe, nous avons conçu le site web d’une association sous WordPress avec 
+                                Elementor et refondu son identité visuelle. 
+                                En contact direct avec l’association, nous avons créé un design moderne et intuitif, défini une nouvelle charte graphique 
+                                (logo, couleurs, typographies) et intégré des fonctionnalités clés (actualités, événements, formulaire de contact). 
+                                Ce projet nous a permis de travailler sur l’expérience utilisateur, la cohérence visuelle et la gestion de projet en collaboration avec 
+                                un client réel.
+                            </p>
+                            <p class="info-software">Réalisé sur Wordpress, Elementor Pro</p>
+                            <img class="img-projet" src="contenu/Projets/screen-sikalobi-site.png" alt="image site sikalobi association">
+                            <img class="img-projet" src="contenu/Projets/sikalobi1.png" alt="image site sikalobi association">
+                            <img class="img-projet" src="contenu/Projets/sikalobi2.png" alt="image site sikalobi association">
+                            <img class="img-projet" src="contenu/Projets/sikalobi3.png" alt="image site sikalobi association">
+                            <img class="img-projet" src="contenu/Projets/sikalobi4.png" alt="image site sikalobi association">
+                            <img class="img-projet" src="contenu/Projets/sikalobi5.png" alt="image site sikalobi association">
+                            <img class="img-projet" src="contenu/Projets/sikalobi6.png" alt="image site sikalobi association">
+                        </div>
+                    </div>
+    
+                    <div class="item-projets code" id="formulaire" onclick="showProjet('formulaire')">
+                        <img 
+                        src="contenu/Projets/redim/connexion-form.png" alt="image formulaire de connexion">
+                        <div class="description">
+                            <h4>Formulaire de connexion</h4>
+                            <p>Création, configuration entière d'un formulaire de connexion en PHP et SQLite</p>
+                            <p>Réalisé sur Xampp, VS Code</p>
+                        </div>
+                        <div class="info">
+                            <p class="info-title">Réalisation d'un formulaire d'incription/connexion</p>
+                            <p class="info-content">
+                                Voici un formulaire codé en PHP, HTML, CSS, JavaScript et SQLite.
+                                Une première page d'inscription permet d'entrer un nom, un prénom, un identifiant unique et un mot de passe.
+                                Ces données sont transmises et enregistrées dans une base de données SQLite, à condition que l'identifiant ne soit pas déjà utilisé.
+                                Ensuite, le formulaire de connexion permet, grâce à vos identifiants, de vous reconnaître et d'afficher votre nom et prénom sur une page de bienvenue.
+                                Ajouts prévus dans une prochaine version : cryptage et décryptage du mot de passe, mise en place d'une fonction "mot de passe oublié".
+                            </p>
+                            <p class="info-software">Réalisé sur Xammp, VisualStudio Code</p>
+                            <img class="img-projet" src="contenu/Projets/connexion-form.png" alt="image formulaire connexion">
+                            <img class="img-projet" src="contenu/Projets/inscription-form.png" alt="image formulaire incription">
+                            <img class="img-projet" src="contenu/Projets/baseSQLite.png" alt="image de base de données SQLite du formulaire">
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="section-design design2 darkmod"></div>
+        </div>
+    
+        <div id="footer-container"></div> <!--footer-->
+    
+    </body>
+</html>

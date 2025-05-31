@@ -1,0 +1,59 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AccountLogin</title>
+    <link rel="stylesheet" href="form.css">
+    <link rel="stylesheet" href="https://use.typekit.net/osb1pck.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+<body>
+    <div class="connect-form">
+        
+        <form method="post">
+            <h1>CONNEXION</h1>
+            <legend>Identifiant : </legend>
+        <div class="login">
+            <input type="text" id="identifiant" placeholder="identifiant"><i class='bx bx-user'></i>
+        </div>
+            <br>
+
+            <legend>Mot de passe : </legend>
+        <div class="login">
+            <input type="password" id="password" placeholder="Mot de passe">
+                    <a href="#" onclick="showpassword()">
+                        <img class="icon" id="vision" src="icons/icon-visibility.svg" title="Montrer" alt="icon-visibility">
+                    </a>
+        </div>
+
+        <div class="box">
+            <input type="checkbox" id="remember" name="remember"> 
+            <label for="remember">Se souvenir de moi</label>
+        </div>
+            <input type="submit" value="Se connecter"> 
+
+            <p>Vous n'avez pas de compte ? <a href="inscription-form.html">Créer</a></p>
+            
+        <hr>
+
+        
+        <h2>Se connecter avec : </h2>
+        <div class="another-connect">
+            <a href="#" onclick="window.open('accounts.google.com/signin', '_blank', 'width=500,height=600')">
+                <img id="google" src="icons/icon-google.png" alt="connexion-google">
+            </a>
+            <a href="#" onclick="window.open(
+                'www.icloud.com', 
+                'iCloudLogin', 
+                'width=500,height=600')">
+                <img id="apple" src="icons/icon-apple.png" alt="connexion-apple">
+            </a>
+        </div>
+
+        </form>
+
+    </div>
+</body>
+<script src="connect-form-script.js"></script>
+</html>

@@ -11,6 +11,12 @@ h1, h2, h3, h4, title{
     font-style: normal;
 }
 
+label {
+    display: block;
+    margin-top: 10px;
+    padding: 10px;
+}
+
 :root{
     --MainColor : #0BB7BD;
     --SecondColor:#B8EAEC;
@@ -84,7 +90,7 @@ h1{
 }
 
 
-.paragraphe {
+.about-paragraphe {
     font-size: clamp(14px, 1.5vw, 25px);
     width: 90%;
     color : var(--InverseColorBtoW) ;
@@ -123,12 +129,12 @@ h1{
     justify-content: center;
 }
 
-#img-presentation{
+.presentation .img-presentation{
     width: 35%;
     height: auto;
     min-width: 180px;
     object-fit: cover;
-    border-radius: 35% 30px  ;
+    border-radius: 35% 30px;
     box-shadow: -15px 0px 6px var(--SecondColor);
 }
 
@@ -574,12 +580,81 @@ h1{
 } 
 
 .presentation-about{
+    position: relative;
     margin: 2% 15%;
     padding: 15px 0 2%;
+    min-height: 350px;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
-    flex-direction: column;
-    gap : 30px ;
-    border-radius: 100px;
+    flex-direction: row;
+    gap : 20px ;
 }
+
+.about-menu{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap : 30px;
+}
+
+.about-menu span{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.about-menu span button{
+    font-size: clamp(16px, 1.5vw, 36px);
+    padding : 1% 4%;
+    border: 2px solid rgba(0, 0, 0, 0);
+    color : var(--InverseColorBtoW);
+    border-radius: 20px;
+    background-color: var(--SecondColor);
+}
+.about-menu span button:hover{
+    border: 2px solid var(--MainColor);
+}
+
+span button.active{
+    border: 2px solid var(--InverseColorBtoW);
+    background-color: var(--MainColor);
+}
+
+.about-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap : 40px;
+    width : 70%;
+    min-height: 400px;
+    margin : 10px 20px;
+}
+
+.presentation-about img{
+    position: relative;
+    z-index: 900;
+    width: 40%;
+    height: auto;
+    min-width: 180px;
+    object-fit: cover;
+    border-radius: 35% 30px;
+    margin : 10px 20px;
+}
+
+.hidden{
+    display : none ; 
+}
+
+.about-content p, .about-content div{
+    font-size: clamp(16px, 1.1vw, 36px);
+    color : var(--InverseColorBtoW);
+    padding : 0 30px;
+    animation: fondu 0.5s ease-in-out forwards;
+}
+
+

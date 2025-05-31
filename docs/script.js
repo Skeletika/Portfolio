@@ -131,7 +131,6 @@ function redirectToPage(event, pageName, ancreId) {
 
           // Extraire le nouveau contenu
             const newContent = doc.querySelector('#main-content').innerHTML;
-            console.log(newContent);
 
             let transition = document.getElementById("transition");
             transition.classList.add("transition-page-enter");
@@ -155,9 +154,29 @@ function redirectToPage(event, pageName, ancreId) {
     }
 }
 
+function showAbout(event, filter){
+
+    let buttonActive = document.querySelectorAll('span button');
+    buttonActive.forEach(button => {
+        button.classList.remove('active');
+    });
+    event.target.classList.toggle('active');
+
+    let elements = document.querySelectorAll('.about-content > .about, .about-content > .activity, .about-content > .passions, .about-content > .others');
+
+    elements.forEach(element => {
+        if(element.classList.contains(filter)){
+            element.classList.remove('hidden');
+        }
+        else{
+            element.classList.add('hidden');
+        }
+    })
+}
+
 function search(event, filter){
 
-    let buttonActive = document.querySelectorAll('.search button');
+    let buttonActive = document.querySelectorAll('span button');
     buttonActive.forEach(button => {
         button.classList.remove('active');
     });
@@ -174,7 +193,7 @@ function search(event, filter){
 }
 
 function resetFilter(){
-    let buttonActive = document.querySelectorAll('.search button');
+    let buttonActive = document.querySelectorAll('.span button');
     buttonActive.forEach(button => {
         button.classList.remove('active');
     });
@@ -193,6 +212,7 @@ function showProjet(id){
     let title = projet.querySelector('.info .info-title').textContent;
     let text = projet.querySelector('.info .info-content').textContent;
     let software = projet.querySelector('.info .info-software').textContent;
+    let button = projet.querySelector('.info a');
     let images = projet.querySelectorAll('.info img');
     let videos = projet.querySelectorAll('.info video');
     
@@ -208,6 +228,13 @@ function showProjet(id){
     logiciel.textContent = software;
     rightContent.appendChild(logiciel);
 
+    if (button){
+    let lien = document.createElement('a');
+    lien.classList.add('cv');
+    lien.textContent = button.textContent;
+    lien.setAttribute("href", button.getAttribute("href"));
+    rightContent.appendChild(lien);
+    }
     videos.forEach(video => {
         let vid = document.createElement('video');
         video.currentsrc = vid.src; 
@@ -240,6 +267,8 @@ function closeProjet(){
         element.querySelectorAll("h3").forEach(title => title.remove());
         // Supprime les paragraphes
         element.querySelectorAll("p").forEach(paragraph => paragraph.remove());
+
+        element.querySelectorAll("a").forEach(lien => lien.remove());
     });
     
     let blur = document.getElementById("blur");

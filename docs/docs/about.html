@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Projets</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="animation.css">
+        <link rel="stylesheet" href="ancre.css">
+        <link rel="stylesheet" href="projets.css">
+        <link rel="stylesheet" href="jeu.css">
+    </head>
+
+    <body>
+        <div id="header-container"></div> <!--header-->
+    
+        <div class="doc" id="main-content"> <!--Contenu de la page-->
+            <div class="section-design design1 darkmod">
+                <h1 id="about" class="flottement">A propos</h1>
+            </div>
+    
+            <div class="container-white">
+    
+                <div class="presentation-about" id="quisuisje" >
+                    <img class="img-presentation flottement" src="images/Josh.jpg" alt="photo-portait">
+                    <div class="about-content">
+                        <div class="about-menu"> <!--Boutons de recherche/filtes su les projets-->
+                            <span>
+                                <button class="active" onclick="showAbout(event,'about')">Qui suis-je ?</button> 
+                                <button onclick="showAbout(event,'activity')">Activités</button>
+                                <button onclick="showAbout(event,'passions')">Passions</button>
+                                <button onclick="showAbout(event,'others')">Autres</button>
+                            </span>
+                        </div>
+                        <p class="about">
+                            Je m'appelle Doucet Joshua, étudiant passionné en première année de Bachelor Multimédia et Web à MyDigitalSchool. Curieux de nature et investi dans tout ce que j’entreprends, j’ai découvert très tôt un intérêt pour la conception de sites internet. Depuis le lycée, je m’investis pleinement pour développer mes compétences en HTML, CSS, JavaScript et d'autres outils du web.
+                            Mon parcours est marqué par l’autonomie, l’adaptabilité et un esprit d’analyse que j’applique aussi bien dans mes projets personnels que dans mes missions en équipe. Je construis actuellement mon portfolio pour partager mon évolution, mes réalisations, et montrer mon envie de progresser dans le développement web.
+                            Toujours en quête de nouvelles connaissances, je vois chaque défi comme une opportunité d’apprendre et de grandir.
+                        </p>
+                        <p class="passions hidden">
+                            Pour vous parler de mes passions, je suis orienté films, séries, jeux vidéo, et sport en tout genre.
+                            Mes œuvres cinématographiques préférées sont les sagas de l'univers de Tolkien : Le Seigneur des Anneaux et Le Hobbit, et pour les séries :
+                            Game of Thrones, The Walking Dead par exemple. Pour les jeux vidéo, je touche à tout : action, multijoueur, compétitif, horreur, simulateur, histoire, à tout !
+                            Enfin, j'aime naturellement faire du sport (toutes disciplines). J'ai fait 5 ans de foot étant petit, un peu d'athlétisme, et du badminton, et je vais régulièrement à la salle de sport.
+                        </p>
+                        <p class="activity hidden">
+                            Mes activités quotidiennes peuvent être assez variées, disons que je touche un peu à tout en dehors du travail scolaire ou professionnel.
+                            J'aime particulièrement la création numérique variée, c'est-à-dire que créer du contenu numérique est pour moi passionnant. J'aime tout aussi bien tester le montage vidéo que
+                            faire de la création 3D, créer un mini-jeu en code, ou me lancer dans la création d'un mod Minecraft, par exemple.
+                            En dehors de ce domaine, je touche à tout de la vie quotidienne, ce qui augmente mes capacités d'autonomie générales.
+                        </p>
+                        <div class="others hidden">
+                            <div id="statue">
+                                <h4>Morpion</h4>
+                                <button onclick="closeOverlay(event)">fermer</button>
+                            </div>
+                            <div class="morpion">
+                                <div class="jeu">
+                                    <span id="0" onclick="play(event)"></span>
+                                    <span id="1" onclick="play(event)"></span>
+                                    <span id="2" onclick="play(event)"></span>
+                                    <span id="3" onclick="play(event)"></span>
+                                    <span id="4" onclick="play(event)"></span>
+                                    <span id="5" onclick="play(event)"></span>
+                                    <span id="6" onclick="play(event)"></span>
+                                    <span id="7" onclick="play(event)"></span>
+                                    <span id="8" onclick="play(event)"></span>
+                                </div>
+                                <button onclick="reset()">Rejouer</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br><br><br><br>
+
+    
+            </div>
+    
+            <div class="section-design design2 darkmod">
+                <!-- <div class="star">
+                    <img src="Graphic_elements/fond-etoile-2.png" class="darkmod" alt="fond étoilé">
+                    <img src="Graphic_elements/fond-etoile-2.png" alt="fond étoilé"> 
+                </div> -->
+            </div>
+        </div>
+    
+        <div id="footer-container"></div> <!--footer-->
+    
+    </body>
+</html> 

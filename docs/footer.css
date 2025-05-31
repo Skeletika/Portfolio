@@ -59,11 +59,12 @@ footer{
 }
 
 .cv{  
-    width: 100%;
+    width: auto;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    justify-self: flex-start;
+    justify-content: center;
+    justify-self: center;
+    text-align: center;
 
     border-radius: 30% 20px 30% 20px;
     padding: 10px;
