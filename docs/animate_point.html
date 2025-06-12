@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App</title>
+
+    <style>
+        *{
+            margin : 0 ;
+            padding : 0;
+        }
+
+        #controls {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            gap : 10px;
+            top: 10px;
+            left: 10px;
+            color: white;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            border-radius: 10px;
+            z-index: 1000;
+        }
+
+        #canvas {
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 100;
+            background-color: #000000;
+            /* Le canvas ne bloque pas les clics */
+        }
+    </style>
+</head>
+
+<body>
+        <canvas id="canvas"></canvas>
+        <div id="controls">
+            <label>
+                Mode couleur :
+                <input type="checkbox" id="colorModeToggle">
+            </label>
+            <label>
+                Nombre de points :
+                <input type="range" id="sliderPoints" min="0" max="600" value="200">
+            </label>
+            <label>
+                Vitesse globale :
+                <input type="range" id="sliderVitesse" min="0.0" max="4" step="0.1" value="0.5">
+            </label>
+            <label>
+                Rayon d'attraction curseur :
+                <input type="range" id="sliderRayon" min="40" max="1000" step="20" value="80">
+            </label>
+
+            <div style="display: flex; flex-direction: column;">
+                <label>
+                    <input type="radio" name="lineMode" value="lines" checked>
+                    Lignes droites
+                </label>
+                <label>
+                    <input type="radio" name="lineMode" value="curves">
+                    Courbes
+                </label>
+                <label>
+                    <input type="radio" name="lineMode" value="zigzag">
+                    Zigzag
+                </label>
+                <label>
+                    <input type="radio" name="lineMode" value="lightning">
+                    Éclair ⚡
+                </label>
+                <label>
+                    <input type="radio" name="lineMode" value="wave">
+                    Onde 🌊
+                </label>
+            </div>
+</body>
+<script src="animate_point.js"></script>
+
+</html>

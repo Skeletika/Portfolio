@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Site</title>
+    <link rel="stylesheet" href="menu.css"> <!-- Ajoute tes styles ici -->
+</head>
+<!-- header portfolio web et serveur -->
+<header>
+    <a id="logo" onclick="redirectToPage(event,'../docs/index.html', 'presentation')" href="../docs/index.html"><img class="darkmod" src="logo/logo-site-bs-petit.png" height="100%" alt="Logo SITE"></a>
+    <nav>
+        <ul class="menu">
+            <li><a class="princip" onclick="redirectToPage(event,'../docs/index.html', 'presentation')" href="../docs/index.html">Accueil</a>
+                <ul class="sous-menu">
+                    <li><a onclick="redirectToPage(event,'../docs/index.html','competence')" href="../docs/index.html">Compétences</a></li>
+                    <li><a onclick="redirectToPage(event,'../docs/index.html', 'parcours')" href="../docs/index.html">Parcours</a></li>
+                </ul>
+            </li>
+            <li><a class="princip" onclick="redirectToPage(event,'../docs/projets.html', 'projets')" href="../docs/projets.html" >Projets</a>
+            </li>
+            <li><a class="princip" onclick="redirectToPage(event,'../docs/about.html', 'about')" href="../docs/about.html">À propos</a>
+                <ul class="sous-menu">
+                    <li><a onclick="redirectToPage(event,'../docs/about.html', 'quisuisje')" href="../docs/about.html">Qui suis-je ?</a></li>
+                    <li><a onclick="redirectToPage(event,'../docs/about.html', '')" href="../docs/about.html">Passions</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <a class="callToAction" onclick="redirectToPageExterne(event,'contact/public/contact-form.php')">Me contacter</a>
+
+</header>
+<div id="transition">
+    <h1 class="redirection-title">Redirection</h1>
+</div>
+
+</html>

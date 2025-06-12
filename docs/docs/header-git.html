@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Site</title>
+    <link rel="stylesheet" href="menu.css"> <!-- Ajoute tes styles ici -->
+</head>
+
+<header>
+    <a id="logo" onclick="redirectToPage(event,'/Portfolio/','presentation')"><img class="darkmod" src="logo/logo-site-bs-petit.png" height="100%" alt="Logo SITE"></a>
+    <nav>
+        <ul class="menu">
+            <li><a class="princip" onclick="redirectToPage(event,'/Portfolio/', 'presentation')">Accueil</a>
+                <ul class="sous-menu">
+                    <li><a onclick="redirectToPage(event,'/Portfolio/','competence')">Compétences</a></li>
+                    <li><a onclick="redirectToPage(event,'/Portfolio/', 'parcours')">Parcours</a></li>
+                </ul>
+            </li>
+            <li><a class="princip" onclick="redirectToPage(event,'/Portfolio/projets.html', '')" >Projets</a>
+            </li>
+            <li><a class="princip" onclick="redirectToPage(event,'/Portfolio/about.html', '')">À propos</a>
+                <ul class="sous-menu">
+                    <li><a onclick="redirectToPage(event,'/Portfolio/about.html', 'quisuisje')">Qui suis-je ?</a></li>
+                    <li><a onclick="redirectToPage(event,'/Portfolio/about.html', '')">Passions</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <a class="callToAction" onclick="redirectToPageExterne(event,'http://portfolio.joshua-doucet.mds-nancy.yt/contact/public/contact-form.php')">Me contacter</a>
+</header>
+<div id="transition">
+    <h1 class="redirection-title">Redirection</h1>
+</div>
+
+</html>
